@@ -1,6 +1,6 @@
 {
   "name": "nuxt-particles",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Run lightweight, heavily customizable particle simulations in your Nuxt project with tsParticles.",
   "repository": "Joepocalyptic/nuxt-particles",
   "license": "MIT",
@@ -37,6 +37,7 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "postinstall": "pnpm run dev:build",
     "release": "pnpm run prepack && changelogen --release --push && pnpm publish",
     "lint": "eslint ."
   },
@@ -57,7 +58,7 @@
     "@types/node": "^18.18.4",
     "changelogen": "^0.5.5",
     "eslint": "^8.57.0",
-    "nuxt": "^3.11.1",
+    "nuxt": "^3.11.1 || ^4.0.0",
     "vitest": "^0.34.6"
   }
 }
