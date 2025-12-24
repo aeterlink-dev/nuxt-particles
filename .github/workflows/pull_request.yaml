@@ -1,0 +1,57 @@
+name: Pull Request
+on: pull_request
+jobs:
+  assign:
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh pr edit $PR_NUMBER --add-assignee $ASSIGNEE
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          ASSIGNEE: ${{ github.actor }}
+        if: ${{ toJSON(github.event.pull_request.assignees) == '[]' }}
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup
+        uses: ./.github/actions/setup
+      - name: Typecheck
+        run: pnpm run build
+      - name: Typecheck
+        run: pnpm run typecheck
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Setup
+        uses: ./.github/actions/setup
+      - name: Format
+        run: pnpm run format
+      - name: Check diff
+        id: diff
+        run: git diff --exit-code
+        continue-on-error: true
+      - name: Commit format
+        if: steps.diff.outcome == 'failure'
+        run: |
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git commit -am "Format"
+          git push
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Do lint"
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Do test"
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
