@@ -1,6 +1,5 @@
 # Changelog
 
-
 ## v0.3.0
 
 [compare changes](https://github.com/Joepocalyptic/nuxt-particles/compare/v0.2.0...v0.3.0)
@@ -47,7 +46,7 @@
 
 - Add renovate.json (560a936)
 
-### ❤️  Contributors
+### ❤️ Contributors
 
 - Joey Pereira <contact@joeypereira.dev>
 
@@ -59,7 +58,7 @@
 
 - Clean up docs (9f1c6da)
 
-### ❤️  Contributors
+### ❤️ Contributors
 
 - Joey Pereira <contact@joeypereira.dev>
 
@@ -72,7 +71,7 @@
 - Clean up (6bfdec8)
 - Clean up (0826ac3)
 
-### ❤️  Contributors
+### ❤️ Contributors
 
 - Joey Pereira <contact@joeypereira.dev>
 
@@ -89,12 +88,11 @@
 - Fix docs prerendering (16462be)
 - Add license (95f8b8d)
 
-### ❤️  Contributors
+### ❤️ Contributors
 
 - Joey Pereira <contact@joeypereira.dev>
 
 ## v0.1.1
-
 
 ### 🏡 Chore
 
@@ -103,7 +101,6 @@
 - Add defu dependency (a5a41a0)
 - Fix defu dependency (f6f6d32)
 
-### ❤️  Contributors
+### ❤️ Contributors
 
 - Joey Pereira <contact@joeypereira.dev>
-

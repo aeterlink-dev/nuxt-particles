@@ -38,10 +38,8 @@ npm install --save-dev nuxt-particles
 
 ```js
 export default defineNuxtConfig({
-  modules: [
-    'nuxt-particles'
-  ]
-})
+  modules: ["nuxt-particles"],
+});
 ```
 
 That's it! You can now use the &lt;NuxtParticles&gt; component in your application! ✨
@@ -59,9 +57,9 @@ Example:
     url="/path/to/particles.json"
     @load="onLoad"
   ></NuxtParticles>
-  
+
   <!-- or -->
-  
+
   <NuxtParticles
     id="tsparticles"
     :options="options"
@@ -70,17 +68,17 @@ Example:
 </template>
 
 <script setup lang="ts">
-import type { Container } from '@tsparticles/engine'
+import type { Container } from "@tsparticles/engine";
 
 const options = {
   // See https://particles.js.org/docs/interfaces/tsParticles_Engine.Options_Interfaces_IOptions.IOptions.html
-}
+};
 
 const onLoad = (container: Container) => {
   // Do something with the container
-  container.pause()
-  setTimeout(() => container.play(), 2000)
-}
+  container.pause();
+  setTimeout(() => container.play(), 2000);
+};
 </script>
 ```
 
@@ -107,14 +105,12 @@ pnpm run release
 ```
 
 <!-- Badges -->
+
 [npm-version-src]: https://img.shields.io/npm/v/nuxt-particles/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-version-href]: https://npmjs.com/package/nuxt-particles
-
 [npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-particles.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-downloads-href]: https://npmjs.com/package/nuxt-particles
-
 [license-src]: https://img.shields.io/npm/l/nuxt-particles.svg?style=flat&colorA=18181B&colorB=28CF8D
 [license-href]: https://npmjs.com/package/nuxt-particles
-
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
